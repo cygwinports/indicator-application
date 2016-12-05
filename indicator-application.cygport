@@ -1,0 +1,14 @@
+inherit gnome2
+
+NAME="indicator-application"
+VERSION=12.10.0
+RELEASE=1
+CATEGORY="X11"
+SUMMARY="Application Indicators backend for GTK+3"
+DESCRIPTION="An indicator to take menus from applications and place them in the panel."
+HOMEPAGE="https://launchpad.net/indicator-application"
+SRC_URI="${HOMEPAGE}/${VERSION%.*}/${VERSION}/+download/${NAME}-${VERSION}.tar.gz"
+PATCH_URI="12.10.0-no-undefined.patch"
+
+# this hasn't been updated in far too long
+CFLAGS+=" -Wno-error=deprecated-declarations"
